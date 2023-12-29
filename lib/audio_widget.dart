@@ -120,7 +120,9 @@ class AudioWidgetState extends State<AudioWidget> {
                     },
                   ),
                 ),
-                const SocialMediaIconsRow(),
+                SocialMediaIconsRow(
+                  onFavoriteTap: () {},
+                ),
                 const SizedBox(height: 20),
                 Container(
                   color: Colors.black,

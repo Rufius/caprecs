@@ -36,7 +36,7 @@ class PostWidget extends StatelessWidget {
                 const SizedBox(height: 20),
                 const Text(
                     "The seven candidates on stage all trail Mr Trump by a significant margin in the race for the party's nomination, and knew they had to do something to change the dynamic. During a chaotic two-hour debate, they often tried to do it at once, talking over each other, the moderators, and sometimes themselves. Thank you for talking while I'm interrupting, Vivek Ramaswamy told Tim Scott snidely in what was a telling Freudian slip."),
-                const SocialMediaIconsRow(),
+                SocialMediaIconsRow(onFavoriteTap: () {}),
                 const SizedBox(height: 20),
                 Container(
                   color: Colors.black,

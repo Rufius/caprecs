@@ -26,7 +26,8 @@ class PostPage extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset('post.png'),
-                const SocialMediaIconsRow(),
+                SocialMediaIconsRow(
+                    onFavoriteTap: () => _showCommentsSheet(context)),
                 const SizedBox(height: 10),
                 const Text(
                   '#HAPPYMOOD',
@@ -44,3 +45,144 @@ class PostPage extends StatelessWidget {
     );
   }
 }
+
+void _showCommentsSheet(BuildContext context) {
+  showModalBottomSheet(
+    context: context,
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
+    ),
+    builder: (BuildContext context) {
+      return DraggableScrollableSheet(
+        expand: false,
+        builder: (_, controller) {
+          return Container(
+            padding: EdgeInsets.all(20),
+            child: Column(
+              children: [
+                // Header
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Comments',
+                      style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    IconButton(
+                      icon: Icon(Icons.close),
+                      onPressed: () => Navigator.pop(context),
+                    ),
+                  ],
+                ),
+                // Comments List
+                Expanded(
+                  child: ListView.builder(
+                    controller: controller,
+                    itemCount: comments.length, // Your comments list length
+                    itemBuilder: (BuildContext context, int index) {
+                      final comment = comments[index]; // Your comment data
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundImage: AssetImage(comment.avatarUrl),
+                          ),
+                          title: Text(comment.authorName),
+                          subtitle: Text(comment.text),
+                          trailing: const Icon(
+                            Icons.favorite_outline,
+                            size: 25.0,
+                            color: Colors.black,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+// New Comment Section
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white, // Background color of the container
+                    borderRadius:
+                        BorderRadius.circular(25.0), // Rounded corners
+                    border: Border.all(color: Colors.purple), // Border color
+                  ),
+                  child: Row(
+                    children: [
+                      const CircleAvatar(
+                        backgroundImage:
+                            AssetImage('profile.png'), // User's avatar URL
+                      ),
+                      const Expanded(
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 8.0),
+                          child: TextField(
+                            decoration: InputDecoration(
+                              hintText:
+                                  'Write a comment...', // Placeholder text
+                              border: InputBorder
+                                  .none, // No border on the text field
+                            ),
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(Icons.send),
+                        onPressed: () {
+                          // Code to handle comment submission
+                        },
+                      ),
+                    ],
+                  ),
+                )
+              ],
+            ),
+          );
+        },
+      );
+    },
+  );
+}
+
+// Mock data structure for comments
+class Comment {
+  final String avatarUrl;
+  final String authorName;
+  final String text;
+
+  Comment(
+      {required this.avatarUrl, required this.authorName, required this.text});
+}
+
+// You would fetch this list from your backend or service
+List<Comment> comments = [
+  Comment(
+    avatarUrl: '49.png',
+    authorName: 'Hamilton Book',
+    text:
+        'Стресс является неотъемлемой частью каждого из нас в современном мире, приблизительно 70%.Более 80 % заболеваний от стресса. И как, зная такую статистику, не задуматься.',
+  ),
+  Comment(
+    avatarUrl: '50.png',
+    authorName: 'Jessy T',
+    text:
+        'Стресс - это реакция организма на внешние факторы, как правило. Стремительный темп жизни, физическая и эмоциональная нагрузка.',
+  ),
+  Comment(
+    avatarUrl: '51.png',
+    authorName: 'Bright Ideas',
+    text:
+        'Каждый вдох жизненно важен, чист и непорочен, даже если подвергается угрозе.',
+  ),
+  Comment(
+    avatarUrl: '51.png',
+    authorName: 'User One',
+    text:
+        'Каждый вдох жизненно важен, чист и непорочен, даже если подвергается угрозе.',
+  ),
+  // Add more comments
+];

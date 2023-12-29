@@ -33,7 +33,9 @@ class VideoWidget extends StatelessWidget {
                 videoUrl:
                     'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
           ),
-          const SocialMediaIconsRow(),
+          SocialMediaIconsRow(
+            onFavoriteTap: () {},
+          ),
           const SizedBox(height: 20),
           Container(
             color: Colors.black,
