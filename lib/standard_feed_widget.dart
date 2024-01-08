@@ -9,8 +9,8 @@ class StandardFeedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 800,
-        height: 500,
+        width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height / 1.5,
         child: Center(
             child: ListView(
           padding: const EdgeInsets.all(8),

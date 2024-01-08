@@ -45,6 +45,13 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/post');
               },
             ),
+            const SizedBox(height: 10),
+            ElevatedButton(
+              child: const Text("Login"),
+              onPressed: () {
+                Navigator.pushNamed(context, '/');
+              },
+            ),
           ],
         ),
       ), // End of body

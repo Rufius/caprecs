@@ -20,23 +20,27 @@ class PostPage extends StatelessWidget {
             name: 'Capsule name',
             description: 'My capsule',
           ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
           Padding(
             padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
             child: Column(
               children: [
-                Image.asset('post.png'),
+                Image.asset('assets/post.png'),
                 SocialMediaIconsRow(
                     onFavoriteTap: () => _showCommentsSheet(context)),
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
                 const Text(
                   '#HAPPYMOOD',
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ), // hashtags
-                const SizedBox(height: 10),
+                const SizedBox(height: 5),
 
-                const Text(
-                    'Будучи пользователями этих продуктов в сети, мы понимаем те проблемы с которыми сталкивается пользователь. Иногда лучшее решение приходит тогда, когда сочетаются разные ситуации. Мы осознали сложность процессов построения личного бренда, продажу продукта или информации через разные платформы, и передачу информации и воспоминаний в будущее. Пользования разными приложениями и работка и над каждым из них занимает много времени и ресурсов, а наличия всего необходимого в одном месте оптимизирует и упрощает все процессы, и что важно экономит деньги и время пользователя'), // hashtags
+                const SizedBox(
+                    height: 100,
+                    child: SingleChildScrollView(
+                      child: Text(
+                          'Будучи пользователями этих продуктов в сети, мы понимаем те проблемы с которыми сталкивается пользователь. Иногда лучшее решение приходит тогда, когда сочетаются разные ситуации. Мы осознали сложность процессов построения личного бренда, продажу продукта или информации через разные платформы, и передачу информации и воспоминаний в будущее. Пользования разными приложениями и работка и над каждым из них занимает много времени и ресурсов, а наличия всего необходимого в одном месте оптимизирует и упрощает все процессы, и что важно экономит деньги и время пользователя'),
+                    )),
               ],
             ),
           ),
@@ -88,7 +92,8 @@ void _showCommentsSheet(BuildContext context) {
                         padding: const EdgeInsets.all(8.0),
                         child: ListTile(
                           leading: CircleAvatar(
-                            backgroundImage: AssetImage(comment.avatarUrl),
+                            backgroundImage:
+                                AssetImage('assets/${comment.avatarUrl}'),
                           ),
                           title: Text(comment.authorName),
                           subtitle: Text(comment.text),
@@ -114,8 +119,8 @@ void _showCommentsSheet(BuildContext context) {
                   child: Row(
                     children: [
                       const CircleAvatar(
-                        backgroundImage:
-                            AssetImage('profile.png'), // User's avatar URL
+                        backgroundImage: AssetImage(
+                            'assets/profile.png'), // User's avatar URL
                       ),
                       const Expanded(
                         child: Padding(

@@ -7,8 +7,8 @@ class ProfileFeedWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-        width: 400,
-        height: 500,
+        width: MediaQuery.of(context).size.width / 5,
+        height: MediaQuery.of(context).size.height / 1.6,
         child: ListView(
           children: const [
             ProfileFeedCapsuleNewWidget(

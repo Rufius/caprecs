@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lifelink/capsule_body_widget.dart';
 import 'package:lifelink/get_app_bar.dart';
+import 'package:lifelink/profile_body_widget.dart';
 import 'package:lifelink/profile_feed_widget.dart';
 import 'package:lifelink/profile_head_widget.dart';
 
@@ -19,13 +20,13 @@ class ProfilePage extends StatelessWidget {
               children: [
                 Center(
                   child: Container(
-                    width: 700,
-                    height: 250,
+                    width: MediaQuery.of(context).size.width,
+                    height: 150,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100.0),
                       image: const DecorationImage(
                         image: AssetImage(
-                            'profile_back.png'), // Replace with your image asset
+                            'assets/profile_back.png'), // Replace with your image asset
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -52,7 +53,7 @@ class ProfilePage extends StatelessWidget {
                   Column(
                     children: [
                       Center(
-                        child: CapsuleBodyWidget(),
+                        child: ProfileBodyWidget(),
                       ),
                     ],
                   ),

@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
 
-class CapsuleBodyWidget extends StatelessWidget {
-  const CapsuleBodyWidget({super.key});
+class ProfileBodyWidget extends StatelessWidget {
+  const ProfileBodyWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height / 1.5,
+      width: MediaQuery.of(context).size.width / 1.4,
+      height: MediaQuery.of(context).size.height / 1.6,
       child: _buildGrid(),
     );
   }
 }
 
-Widget _buildGrid() => GridView.extent(
-    maxCrossAxisExtent: 300,
-    padding: const EdgeInsets.all(4),
-    mainAxisSpacing: 4,
-    crossAxisSpacing: 4,
-    children: _buildGridTileList(10));
+Widget _buildGrid() =>
+    GridView.extent(maxCrossAxisExtent: 150, children: _buildGridTileList(10));
 
 // The images are saved with names pic0.jpg, pic1.jpg...pic29.jpg.
 // The List.generate() constructor allows an easy way to create

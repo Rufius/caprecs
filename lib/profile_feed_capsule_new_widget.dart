@@ -35,8 +35,8 @@ class ProfileFeedCapsuleNewWidget extends StatelessWidget {
                   // Image widget that will serve as the background.
                   Image.asset(
                     image, // Replace with your image path.
-                    width: 150, // Set the width of the image.
-                    height: 100, // Set the height of the image.
+                    width: 100, // Set the width of the image.
+                    height: 50, // Set the height of the image.
                     fit: BoxFit
                         .cover, // Cover the entire space of the container.
                   ), // Image widget ends here.
@@ -44,7 +44,7 @@ class ProfileFeedCapsuleNewWidget extends StatelessWidget {
                   // Container widget for the dark overlay, optional.
                   IntrinsicWidth(
                     child: Container(
-                      height: 50,
+                      height: 30,
                       alignment: Alignment.center,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
@@ -58,7 +58,7 @@ class ProfileFeedCapsuleNewWidget extends StatelessWidget {
                         child: Text(
                           text,
                           style: const TextStyle(
-                            fontSize: 24, // Adjust the font size accordingly.
+                            fontSize: 10, // Adjust the font size accordingly.
                             fontWeight:
                                 FontWeight.bold, // Bold font for the text.
                             color: Colors.white, // White color for the text.

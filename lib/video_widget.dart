@@ -9,7 +9,7 @@ class VideoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(100.0, 0.0, 100.0, 20.0),
+      padding: const EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 20.0),
       child: Column(
         children: [
           const Padding(
@@ -28,7 +28,7 @@ class VideoWidget extends StatelessWidget {
             ]),
           ),
           SizedBox(
-            width: 500,
+            width: MediaQuery.of(context).size.width,
             child: CustomVideoPlayer(
                 videoUrl:
                     'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),

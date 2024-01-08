@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lifelink/pages/capsule_feed_page.dart';
 import 'package:lifelink/pages/capsule_page.dart';
 import 'package:lifelink/pages/home_page.dart';
+import 'package:lifelink/pages/login_page.dart';
 import 'package:lifelink/pages/post_page.dart';
 import 'package:lifelink/pages/profile_page.dart';
 import 'package:lifelink/pages/standard_feed_page.dart';
@@ -18,12 +19,13 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       initialRoute: '/',
       routes: {
-        '/': (_) => const HomePage(),
+        '/': (_) => LoginPage(),
         '/standard-feed': (_) => const StandardFeedPage(),
         '/capsule-feed': (_) => const CpasuleFeedPage(),
         '/capsule': (_) => const CapsulePage(),
         '/profile': (_) => const ProfilePage(),
         '/post': (_) => const PostPage(),
+        '/home': (_) => const HomePage(),
       },
     );
   }

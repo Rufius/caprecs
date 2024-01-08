@@ -15,7 +15,7 @@ class StandardFeedPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             CapsuleHeadWidget(
-              avatarImage: '1.jpg',
+              avatarImage: 'assets/1.jpg',
               name: 'FOOTBALL AND MORE',
               description: 'The feed of sport events',
             ),

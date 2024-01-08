@@ -8,7 +8,7 @@ class CapsuleFeedWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
         width: 400,
-        height: 500,
+        height: MediaQuery.of(context).size.height / 1.1,
         child: ListView(
           children: const [
             FeedCapsuleWidget(),

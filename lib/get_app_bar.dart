@@ -6,7 +6,7 @@ AppBar getAppBar(BuildContext context) {
       child: const Icon(Icons.arrow_back),
       onTap: () => Navigator.pop(context),
     ),
-    title: Image.asset('logo.png'),
+    title: Image.asset('assets/logo.png'),
     centerTitle: true,
     backgroundColor: Colors.white,
     elevation: 0.0, // Removes default shadow // End of PreferredSize
