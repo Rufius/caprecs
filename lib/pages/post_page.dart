@@ -57,97 +57,134 @@ void _showCommentsSheet(BuildContext context) {
       borderRadius: BorderRadius.vertical(top: Radius.circular(20.0)),
     ),
     builder: (BuildContext context) {
-      return DraggableScrollableSheet(
-        expand: false,
-        builder: (_, controller) {
-          return Container(
-            padding: EdgeInsets.all(20),
-            child: Column(
+      return Container(
+        padding: EdgeInsets.all(20),
+        child: Column(
+          children: [
+            // Header
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Header
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    const Text(
-                      'Comments',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(Icons.close),
-                      onPressed: () => Navigator.pop(context),
-                    ),
-                  ],
-                ),
-                // Comments List
-                Expanded(
-                  child: ListView.builder(
-                    controller: controller,
-                    itemCount: comments.length, // Your comments list length
-                    itemBuilder: (BuildContext context, int index) {
-                      final comment = comments[index]; // Your comment data
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: ListTile(
-                          leading: CircleAvatar(
-                            backgroundImage:
-                                AssetImage('assets/${comment.avatarUrl}'),
-                          ),
-                          title: Text(comment.authorName),
-                          subtitle: Text(comment.text),
-                          trailing: const Icon(
-                            Icons.favorite_outline,
-                            size: 25.0,
-                            color: Colors.black,
-                          ),
-                        ),
-                      );
-                    },
+                const Text(
+                  'Comments',
+                  style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-// New Comment Section
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 8.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white, // Background color of the container
-                    borderRadius:
-                        BorderRadius.circular(25.0), // Rounded corners
-                    border: Border.all(color: Colors.purple), // Border color
-                  ),
-                  child: Row(
-                    children: [
-                      const CircleAvatar(
-                        backgroundImage: AssetImage(
-                            'assets/profile.png'), // User's avatar URL
-                      ),
-                      const Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.only(left: 8.0),
-                          child: TextField(
-                            decoration: InputDecoration(
-                              hintText:
-                                  'Write a comment...', // Placeholder text
-                              border: InputBorder
-                                  .none, // No border on the text field
-                            ),
-                          ),
-                        ),
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.send),
-                        onPressed: () {
-                          // Code to handle comment submission
-                        },
-                      ),
-                    ],
-                  ),
-                )
+                IconButton(
+                  icon: Icon(Icons.close),
+                  onPressed: () => Navigator.pop(context),
+                ),
               ],
             ),
-          );
-        },
+            // Comments List
+            Expanded(
+              child: ListView(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${comments[0].avatarUrl}'),
+                      ),
+                      title: Text(comments[0].authorName),
+                      subtitle: Text(comments[0].text),
+                      trailing: const Icon(
+                        Icons.favorite_outline,
+                        size: 25.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${comments[1].avatarUrl}'),
+                      ),
+                      title: Text(comments[1].authorName),
+                      subtitle: Text(comments[1].text),
+                      trailing: const Icon(
+                        Icons.favorite_outline,
+                        size: 25.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${comments[2].avatarUrl}'),
+                      ),
+                      title: Text(comments[2].authorName),
+                      subtitle: Text(comments[2].text),
+                      trailing: const Icon(
+                        Icons.favorite_outline,
+                        size: 25.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${comments[3].avatarUrl}'),
+                      ),
+                      title: Text(comments[3].authorName),
+                      subtitle: Text(comments[3].text),
+                      trailing: const Icon(
+                        Icons.favorite_outline,
+                        size: 25.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ), // New Comment Section
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              decoration: BoxDecoration(
+                color: Colors.white, // Background color of the container
+                borderRadius: BorderRadius.circular(25.0), // Rounded corners
+                border: Border.all(color: Colors.purple), // Border color
+              ),
+              child: Row(
+                children: [
+                  const CircleAvatar(
+                    backgroundImage:
+                        AssetImage('assets/profile.png'), // User's avatar URL
+                  ),
+                  const Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 8.0),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Write a comment...', // Placeholder text
+                          border:
+                              InputBorder.none, // No border on the text field
+                        ),
+                      ),
+                    ),
+                  ),
+                  IconButton(
+                    icon: Icon(Icons.send),
+                    onPressed: () {
+                      // Code to handle comment submission
+                    },
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
       );
     },
   );
