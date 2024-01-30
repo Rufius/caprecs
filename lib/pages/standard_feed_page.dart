@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lifelink/app_bar_widget.dart';
 import 'package:lifelink/capsule_head_widget.dart';
-import 'package:lifelink/get_app_bar.dart';
 import 'package:lifelink/standard_feed_widget.dart';
 
 class StandardFeedPage extends StatelessWidget {
@@ -8,9 +8,9 @@ class StandardFeedPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: getAppBar(context),
-      body: const Center(
+    return const Scaffold(
+      appBar: AppBarWidget(height: 102),
+      body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [

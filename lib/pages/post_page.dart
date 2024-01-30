@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lifelink/capsule_body_widget.dart';
+import 'package:lifelink/app_bar_widget.dart';
 import 'package:lifelink/capsule_head_widget.dart';
 import 'package:lifelink/get_app_bar.dart';
 import 'package:lifelink/icons_row_widget.dart';
@@ -10,7 +10,7 @@ class PostPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: getAppBar(context),
+      appBar: AppBarWidget(height: 102),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
@@ -123,6 +123,54 @@ void _showCommentsSheet(BuildContext context) {
                       ),
                       title: Text(comments[2].authorName),
                       subtitle: Text(comments[2].text),
+                      trailing: const Icon(
+                        Icons.favorite_outline,
+                        size: 25.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${comments[3].avatarUrl}'),
+                      ),
+                      title: Text(comments[3].authorName),
+                      subtitle: Text(comments[3].text),
+                      trailing: const Icon(
+                        Icons.favorite_outline,
+                        size: 25.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${comments[3].avatarUrl}'),
+                      ),
+                      title: Text(comments[3].authorName),
+                      subtitle: Text(comments[3].text),
+                      trailing: const Icon(
+                        Icons.favorite_outline,
+                        size: 25.0,
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage:
+                            AssetImage('assets/${comments[3].avatarUrl}'),
+                      ),
+                      title: Text(comments[3].authorName),
+                      subtitle: Text(comments[3].text),
                       trailing: const Icon(
                         Icons.favorite_outline,
                         size: 25.0,

@@ -17,7 +17,7 @@ class _CustomVideoPlayerState extends State<CustomVideoPlayer> {
   @override
   void initState() {
     super.initState();
-    _controller = VideoPlayerController.network(widget.videoUrl)
+    _controller = VideoPlayerController.asset(widget.videoUrl)
       ..initialize().then((_) {
         // Ensure the first frame is shown when initialized
         setState(() {});

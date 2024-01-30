@@ -29,9 +29,7 @@ class VideoWidget extends StatelessWidget {
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width,
-            child: CustomVideoPlayer(
-                videoUrl:
-                    'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'),
+            child: CustomVideoPlayer(videoUrl: 'assets/bee.mp4'),
           ),
           SocialMediaIconsRow(
             onFavoriteTap: () {},
